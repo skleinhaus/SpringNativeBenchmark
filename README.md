@@ -38,3 +38,10 @@ Create the JVM image
 docker build -f src/main/docker/Dockerfile.jvm -t springnativebenchmarkjvm .
 ```
 
+Pushing the Image to Google Artifact Registry
+
+```
+gcloud auth login
+docker tag {Image Name} europe-west3-docker.pkg.dev/{Repository Name}
+docker push europe-west3-docker.pkg.dev/{Repository Name}
+```
